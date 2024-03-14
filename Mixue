@@ -56,3 +56,32 @@ def main():
                 4. Keluar''')
         pilihan = input("Masukkan kode menu untuk mengakses menu (1/2/3/4): ")
 
+if pilihan == '1':
+            kode_pesanan = input("Masukkan kode menu pesanan yang ingin dipesan (a/b/c/d/e): ")
+            jumlah_pesanan = int(input("Masukkan jumlah pesanan: "))
+            temp = menu.head
+            while temp:
+                if temp.nama_menu.lower().startswith(kode_pesanan.lower()):
+                    for _ in range(jumlah_pesanan):
+                        keranjang.tambah_pesanan(temp.nama_menu, temp.harga)
+                    print(f"Pesanan ditambahkan ke keranjang.")
+                    break
+                temp = temp.next
+            else:
+                print("Kode menu tidak valid. Silakan pilih kode menu yang tersedia.")
+
+        elif pilihan == '2':
+            print("\nPesanan Anda:")
+            keranjang.tampilkan_pesanan()
+
+        elif pilihan == '3':
+            print("Total Harga yang dibayarkan: Rp", keranjang.total_harga())
+
+        elif pilihan == '4':
+            print("Terima kasih telah menggunakan layanan kami.")
+            break
+
+        else:
+            print("Menu tidak valid. Silakan pilih menu yang tersedia.")
+
+main()
