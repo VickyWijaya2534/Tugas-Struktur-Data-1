@@ -1,0 +1,29 @@
+class Pesanan:
+    def __init__(self, nama_menu, harga):
+        self.nama_menu = nama_menu
+        self.harga = harga
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+        self.length = 0
+
+    def tampilkan_pesanan(self):
+        temp = self.head
+        while temp:
+            print(f"{temp.nama_menu}: Rp {temp.harga}")
+            temp = temp.next
+
+    def tambah_pesanan(self, nama_menu, harga):
+        newnode = Pesanan(nama_menu, harga)
+        if self.length == 0:
+            self.head = newnode
+            self.tail = newnode
+        else:
+            self.tail.next = newnode
+            self.tail = newnode
+        self.length += 1  
+
+    def total_harga(self):
