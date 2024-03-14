@@ -1,5 +1,5 @@
 # Tugas-Struktur-Data-1
-Tugas Mata Kuliah Dtruktur Data (08/03/2024)
+Tugas Mata Kuliah Struktur Data (08/03/2024)
 
 Prodi Manajemen Informatika Angkatan 2023 Anggota kelompok :
 
