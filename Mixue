@@ -27,3 +27,32 @@ class LinkedList:
         self.length += 1  
 
     def total_harga(self):
+       total = 0
+        temp = self.head
+        while temp:
+            total += temp.harga
+            temp = temp.next
+        return total
+    
+def main():
+    menu = LinkedList()
+    menu.tambah_pesanan("a : Miexue Ice Cream", 5000)
+    menu.tambah_pesanan("b : Boba Shake", 16000)
+    menu.tambah_pesanan("c : Mi Sundae", 14000)
+    menu.tambah_pesanan("d : Mi Ganas", 11000)
+    menu.tambah_pesanan("e : Creamy Mango Boba", 22000)
+
+    keranjang = LinkedList()
+
+    while True:
+        print('''\n=================================================
+              \nMenu Miexue''')
+        menu.tampilkan_pesanan()
+        print('''\n=================================================
+                \nMenu Aplikasi
+                1. Tambah pesanan ke keranjang
+                2. Tampilkan pesanan yang sudah ditambahkan
+                3. Jumlah Harga yang dibayarkan
+                4. Keluar''')
+        pilihan = input("Masukkan kode menu untuk mengakses menu (1/2/3/4): ")
+
